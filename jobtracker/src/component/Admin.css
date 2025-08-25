@@ -1,0 +1,204 @@
+/* DashboardPage.css */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body style */
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Container */
+.dashboard-container {
+  background-color: #fff;
+  width: 923px;
+  max-width: 1400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Header */
+.dashboard-container header {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-container header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation buttons */
+.Button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center; /* أو space-between لو عندك أكثر من زر */
+  gap: 15px; /* مسافة بين الأزرار */
+  margin: -2px 52px;
+
+}
+
+.Button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.3);
+}
+
+/* Content wrapper: form on the left, table on the right */
+.dashboard-content {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  margin: 0px 0px 0px 39px;
+}
+
+/* Form styling (fixed width) */
+.dashboard-form {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid #e4e6ef;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fafafa;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.dashboard-form:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-form input,
+.dashboard-form select {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.dashboard-form input:focus,
+.dashboard-form select:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.35);
+}
+
+/* Submit button */
+.dashboard-form button {
+  padding: 14px;
+  
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(106, 17, 203, 0.35);
+}
+
+/* Table styling (flexible width) */
+.dashboard-table {
+  flex: 1;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+}
+
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.dashboard-table thead {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+}
+
+.dashboard-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: #eef2ff;
+  cursor: pointer;
+}
+
+/* Footer */
+.dashboard-container footer {
+  background-color: #f5f5f5;
+  color: #444;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Fade In animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .dashboard-form {
+    width: 100%;
+  }
+}
+
