@@ -1,0 +1,47 @@
+.divss {
+    background-color: #fff;
+    width: 1000px;
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 39px;
+}
+div h2{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 12px 0px 0px 0px ;
+}
+.chat-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+ margin-bottom: 16px;
+    margin-left: 42px;
+}
+
+.chat-input {
+  padding: 8px;
+  width: 70%;
+  margin: 0px 0px 15px 105px;
+}
+
+.chat-button {
+  padding: 8px 12px;
+  margin-left: 5px;
+}
+
+.chat-message-user {
+  text-align: right;
+  margin: 5px 0;
+  color: #1a73e8;
+}
+
+.chat-message-ai {
+  text-align: left;
+  margin: 5px 0;
+  color: #555;
+}
