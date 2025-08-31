@@ -6,6 +6,9 @@ import ProfilePage from "./component/ProfilePage";
 import NotFound from "./component/NotFound";
 import PrivateRoute from "./PrivateNavigate";
 import AdminPage from "./component/AdminPage"
+import ResumeHelper from "./ResumeHelper/ResumeHelper";
+import DescriptionAnalyzer from "./DescriptionAnalyzer/DescriptionAnalyzer";
+import Chat from "./Chat/Chat";
 
 export default function Navigation() {
   return (
@@ -37,6 +40,30 @@ export default function Navigation() {
         element={
           <PrivateRoute allowedRoles={["user" , "admin"]}>
             <AdminPage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/resumehelper"
+        element={
+          <PrivateRoute allowedRoles={["user" , "admin"]}>
+            <ResumeHelper />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/jobanalyzer"
+        element={
+          <PrivateRoute allowedRoles={["admin"]}>
+            <DescriptionAnalyzer />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/chat"
+        element={
+          <PrivateRoute allowedRoles={["user","admin"]}>
+            <Chat />
           </PrivateRoute>
         }
       />

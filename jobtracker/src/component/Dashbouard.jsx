@@ -1,91 +1,3 @@
-// import { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux"
-// import { useNavigate } from "react-router-dom"
-// import { addJob } from "../Redux/Reduser";
-// import { addDoc, collection, doc } from "firebase/firestore";
-// import { db } from "../FireBase/FireBase";
-
-// export default function Dashboard() {
-//     const [company, setCompany] = useState("");
-//     const [position, setPosition] = useState("");
-//     const [status, setStatus] = useState("applied");
-//     const dispatch = useDispatch();
-
-//     const navigate = useNavigate();
-//     const user = useSelector((status) => status.User)
-//     console.log(user);
-
-
-//     const handleReqJob = async (e) => {
-//         e.preventDefault();
-//         if (!company || !position || !status) {
-//             alert("enter your information ")
-//         }
-//         try {
-
-//             const docRef = await addDoc(collection(db, "job"), {
-//                 company,
-//                 position,
-//                 status,
-//                 uid: user.user.uid,
-//                 createdAt: new Date(),
-//                 name: user.user.username
-//             })
-//             console.log("Job saved with ID: ", docRef.id);
-//             dispatch(
-//                 addJob({
-//                     id: docRef.id,
-//                     company,
-//                     position,
-//                     status,
-//                     uid: user.user.uid,
-//                     name: user.user.username
-//                 })
-//             );
-//             setCompany("");
-//             setPosition("");
-//             setStatus("applied");
-//         } catch (error) {
-//             alert(error.message)
-//         }
-
-
-
-//     }
-
-//     return (
-//         <>
-//             <button onClick={() => navigate("/profilepage")
-//             }>profile page</button>
-//             <button onClick={() => navigate("/adminpage")
-//             }>Admin</button>
-
-//             <form onSubmit={handleReqJob}>
-//                 <input
-//                     type="text"
-//                     value={company}
-//                     placeholder="Company"
-//                     onChange={(e) => setCompany(e.target.value)}
-//                 />
-//                 <input
-//                     type="text"
-//                     value={position}
-//                     placeholder="Position"
-//                     onChange={(e) => setPosition(e.target.value)}
-//                 />
-//                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
-//                     <option value="applied">Applied</option>
-//                     <option value="interview">Interview</option>
-//                     <option value="rejected">Rejected</option>
-//                     <option value="hired">Hired</option>
-//                 </select>
-//                 <button type="submit">Add Job</button>
-//             </form>
-
-//         </>
-//     )
-// }
-
 import { collection, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux"
@@ -132,7 +44,9 @@ export default function AdminPage() {
                 <button onClick={() => navigate("/profilepage")
                 }>profile page</button>
                 <button onClick={() => navigate("/adminpage")
-                }>Admin</button></div>
+                }>Enter Job</button>
+                <button onClick={() => navigate("/jobanalyzer")
+                }>JobAnalyzer</button></div>
             <table border="1" cellPadding="5" >
                 <thead>
                     <tr>
